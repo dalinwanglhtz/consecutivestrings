@@ -7,15 +7,16 @@ public class LongestConsec {
 		String output="";
 		for(int i=0; i<strarr.length; i++) {
 			result = new StringBuilder();
-			for(int j=i; j<i+k; j++) {
-				result.append(strarr[j]);
+			if(i+k <= strarr.length) {
+				for(int j=i; j<i+k; j++) {
+					result.append(strarr[j]);
+				}
+				if(output.length() < result.toString().length()) {
+					output = result.toString();
+				}
 			}
-			if(output.length() < result.toString().length()) {
-				output = result.toString();
-			}
-			System.out.println("Output: "+output);
 		}
-		return null;
+		return output;
 	}
 
 }
